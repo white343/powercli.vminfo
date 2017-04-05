@@ -35,13 +35,13 @@ public class JsonClient {
 
 
             // Send JSON HTTP POST Message
-            /*
+
             RestTemplate rest = new RestTemplate();
 
-            String url="https://jsonplaceholder.typicode.com/posts";
+            String url="http://10.40.99.89/api/vm/update";
 
-            System.out.println(rest.postForObject(url,JSON_VMsinfo,JSONArray.class))
-            */
+            System.out.println(rest.postForObject(url,vminfos_json,JSONArray.class))
+
 
         }
 
