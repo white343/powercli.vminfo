@@ -21,27 +21,17 @@ public class JsonClient {
 
         public static void main(String[] args) throws Exception {
 
-            readCsvFiletoMap vminfo = new readCsvFiletoMap();
+            readCsvFile vminfo = new readCsvFile();
 
-            // Settings MAP
-            String path="/Users/heogeunhyeong/Downloads/2017-03-14_8F.csv";
+            // Settings path
+            String[] path={"/Users/heogeunhyeong/Downloads/2017-03-14_8F.csv"};
             vminfo.setPath(path);
 
-            List<Map<String ,String>> VMsinfo = new ArrayList<Map<String, String>>();
-            VMsinfo= vminfo.getMap();
-
-            // setting JSON
-
-            readCsvFiletoJSON JSON_vminfo = new readCsvFiletoJSON(VMsinfo);
-            JSONArray JSON_VMsinfo = JSON_vminfo.getJSON();
-
-            for( Object VMTEST : JSON_VMsinfo){
+            JSONArray vminfos_json = vminfo.getVminfos_json();
 
                 System.out.println("==================");
-                System.out.println(VMTEST);
+                System.out.println(vminfos_json.get(0));
                 System.out.println("==================");
-
-            }
 
 
             // Send JSON HTTP POST Message
