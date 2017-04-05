@@ -45,7 +45,7 @@ public class readCsvFile {
                 int i = 0;
                 for (String vminfo2 : vminfo1) {
 
-                    String[] vms = vminfo2.split("\\s+");
+                    String[] vms = vminfo2.split(":");
                     if (vms.length >= 2) {
 
                         JSONArray jsonArray = new JSONArray();

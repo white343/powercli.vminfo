@@ -40,7 +40,7 @@ public class JsonClient {
 
             String url="http://10.40.99.89/api/vm/update";
 
-            System.out.println(rest.postForObject(url,vminfos_json,JSONArray.class))
+            System.out.println(rest.postForObject(url,vminfos_json,JSONArray.class));
 
 
         }
