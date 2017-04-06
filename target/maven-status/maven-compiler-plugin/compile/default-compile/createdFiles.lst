@@ -1,0 +1,3 @@
+com\tidc\cmdb\module\powercli\vminfo\readCsvFile.class
+com\tidc\cmdb\module\powercli\vminfo\VminfoObject.class
+com\tidc\cmdb\module\powercli\vminfo\JsonClient.class
