@@ -5,8 +5,8 @@ public class VminfoObject {
     private static final String[] key = {"HostKey","HostName","HostIP","HostMac","ServiceNm","MotherIp","CpuNum","MemVol","DiskSize","DataStore","OsName"};
     private String Hostkey;
     private String HostName;
-    private String[] HostIP;
-    private String[] HostMac;
+    private String HostIP;
+    private String HostMac;
     private String ServiceNm;
     private String MotherIp;
     private String CpuNum;
@@ -17,6 +17,22 @@ public class VminfoObject {
 
     public static String[] getKey() {
         return key;
+    }
+
+    @Override
+    public String toString() {
+        String result;
+        return result = key[0]+":"+Hostkey+","
+                + key[1]+":"+HostName+","
+                + key[2]+":"+HostIP+","
+                + key[3]+":"+HostMac+","
+                + key[4]+":"+ServiceNm+","
+                + key[5]+":"+MotherIp+","
+                + key[6]+":"+CpuNum+","
+                + key[7]+":"+MemVol+","
+                + key[8]+":"+DiskSize+","
+                + key[9]+":"+DataStore+","
+                + key[10]+":"+OsName;
     }
 
     public String getHostkey() {
@@ -35,19 +51,19 @@ public class VminfoObject {
         HostName = hostName;
     }
 
-    public String[] getHostIP() {
+    public String getHostIP() {
         return HostIP;
     }
 
-    public void setHostIP(String[] hostIP) {
+    public void setHostIP(String hostIP) {
         HostIP = hostIP;
     }
 
-    public String[] getHostMac() {
+    public String getHostMac() {
         return HostMac;
     }
 
-    public void setHostMac(String[] hostMac) {
+    public void setHostMac(String hostMac) {
         HostMac = hostMac;
     }
 

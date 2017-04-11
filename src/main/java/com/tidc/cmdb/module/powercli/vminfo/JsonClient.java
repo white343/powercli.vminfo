@@ -24,23 +24,29 @@ public class JsonClient {
             readCsvFile vminfo = new readCsvFile();
 
             // Settings path
-            String[] path={"/Users/heogeunhyeong/Downloads/2017-03-14_8F.csv"};
+            String[] path={"/home/keunhyoung/2017-04-11_8층VM현황자료.csv"};
             vminfo.setPath(path);
 
-            JSONArray vminfos_json = vminfo.getVminfos_json();
+            List<VminfoObject> vminfos_object = vminfo.getvminfos_object();
+            JSONArray vminfos_json = new JSONArray();
+            for(VminfoObject vminfo_object : vminfos_object) {
+                JsonFormat vminfo_json = new JsonFormat(vminfo_object);
+                vminfos_json.add(vminfo_json.getVminfo_json());
+
+            }
 
                 System.out.println("==================");
-                System.out.println(vminfos_json.get(0));
+                System.out.println(vminfos_json.get(30));
                 System.out.println("==================");
 
 
             // Send JSON HTTP POST Message
 
-            RestTemplate rest = new RestTemplate();
+            //RestTemplate rest = new RestTemplate();
 
-            String url="http://10.40.99.89/api/vm/update";
+            //String url="http://10.40.99.89/api/vm/update";
 
-            System.out.println(rest.postForObject(url,vminfos_json,JSONArray.class));
+            //System.out.println(rest.postForObject(url,vminfos_json.get(0),JSONObject.class));
 
 
         }
