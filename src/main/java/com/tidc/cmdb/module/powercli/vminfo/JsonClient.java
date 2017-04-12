@@ -50,7 +50,7 @@ public class JsonClient {
                 //httpClient.setUrl("http://10.40.99.89/api/vm/update");
                 //httpClient.setRequest(request);
 
-                //httpClient.sendPost();
+                //httpClient.sendPost(); //test
             }
 
 
