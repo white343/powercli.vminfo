@@ -36,7 +36,7 @@ public class readCsvFile {
 
         for (String pathseg : path) {
 
-            csvReader = new CSVReader(new FileReader(pathseg), ',', '"', 1);
+            csvReader = new CSVReader(new FileReader(pathseg), ',', '"', 2);
             vminfo_string = csvReader.readAll();
 
             for (String[] vminfo1 : vminfo_string) {
