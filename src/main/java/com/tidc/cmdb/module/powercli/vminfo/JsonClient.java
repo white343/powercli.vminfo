@@ -1,6 +1,9 @@
 package com.tidc.cmdb.module.powercli.vminfo;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -23,7 +26,7 @@ public class JsonClient {
             readCsvFile vminfo = new readCsvFile();
 
             // Settings CsvFile Path
-            String[] path={"/home/keunhyoung/2017-04-11_8층VM현황자료.csv"};
+            String[] path={"/home/keunhyoung/vminfo/Bora_6F.csv"};
 
             vminfo.setPath(path);
             List<VminfoObject> vminfos_object = vminfo.getvminfos_object();
@@ -36,12 +39,14 @@ public class JsonClient {
 
             }
 
-
-            // Send JSON HTTP POST Message
+                        // Send JSON HTTP POST Message
 
             HttpClient httpClient = new HttpClient();
 
             System.out.println(vminfos_json.size());
+
+            System.out.println("object="+vminfos_json.get(30).toString());
+            /*
             for ( Object vminfo_json1 : vminfos_json){
 
                 String request="object="+vminfo_json1.toString();
@@ -53,7 +58,7 @@ public class JsonClient {
                 //httpClient.sendPost(); //test
             }
 
-
+*/
 
         }
 

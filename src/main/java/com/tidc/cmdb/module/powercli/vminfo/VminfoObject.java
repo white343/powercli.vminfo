@@ -15,6 +15,13 @@ public class VminfoObject {
     private String DataStore;
     private String OsName;
 
+
+    readCsvFile readcsvfile = new readCsvFile();
+
+
+
+
+
     public static String[] getKey() {
         return key;
     }

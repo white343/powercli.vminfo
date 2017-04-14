@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by heogeunhyeong on 2017. 4. 5..
@@ -22,6 +23,8 @@ public class readCsvFile {
     private List<VminfoObject> vminfos_object = new ArrayList<VminfoObject>();
 
     private String[] path;
+
+    private VMHostIP vmHostIP = new VMHostIP();
 
 
     public String[] getPath() {
@@ -39,16 +42,22 @@ public class readCsvFile {
             csvReader = new CSVReader(new FileReader(pathseg), ',', '"', 2);
             vminfo_string = csvReader.readAll();
 
+            Map<String,String> vmhostip =vmHostIP.getVmhosts_info();
+
             for (String[] vminfo1 : vminfo_string) {
 
                 VminfoObject vminfo_object = new VminfoObject();
+
+                System.out.println(vmhostip.get(vminfo1[6].split(".tidc.skt")[2]));
 
                 vminfo_object.setHostkey(vminfo1[0]);
                 vminfo_object.setHostName(vminfo1[1]);
                 vminfo_object.setHostIP(vminfo1[2]);
                 vminfo_object.setHostMac(vminfo1[3]);
                 vminfo_object.setServiceNm(vminfo1[5]);
-                vminfo_object.setMotherIp(vminfo1[6]);
+
+                //if(vminfo1[6].split(".tidc.skt")[2]="tidc")
+                vminfo_object.setMotherIp(vmhostip.get(vminfo1[6].split(".tidc.skt")[0]));
                 vminfo_object.setCpuNum(vminfo1[7]);
                 vminfo_object.setMemVol(vminfo1[8]);
                 vminfo_object.setDiskSize(vminfo1[9]);
