@@ -48,15 +48,13 @@ public class readCsvFile {
 
                 VminfoObject vminfo_object = new VminfoObject();
 
-                System.out.println(vmhostip.get(vminfo1[6].split(".tidc.skt")[2]));
+                System.out.println(vminfo1[6]);
 
                 vminfo_object.setHostkey(vminfo1[0]);
                 vminfo_object.setHostName(vminfo1[1]);
                 vminfo_object.setHostIP(vminfo1[2]);
                 vminfo_object.setHostMac(vminfo1[3]);
                 vminfo_object.setServiceNm(vminfo1[5]);
-
-                //if(vminfo1[6].split(".tidc.skt")[2]="tidc")
                 vminfo_object.setMotherIp(vmhostip.get(vminfo1[6].split(".tidc.skt")[0]));
                 vminfo_object.setCpuNum(vminfo1[7]);
                 vminfo_object.setMemVol(vminfo1[8]);
